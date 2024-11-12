@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Bank Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="hidden md:block w-1/6 bg-white shadow-lg p-5">
+      <h1 class="text-xl font-bold text-red-600 mb-8"><i class="fa-solid fa-building-columns"></i><span class="text-red-300 ml-2">Som</span> Blood Bank</h1>
+      <nav class="space-y-4">
+        <a href="#" class="flex items-center text-red-500 font-medium space-x-2 hover:bg-gray-200 p-2 rounded">
+          <span class="material-icons"><i class="fa-brands fa-windows"></i></span> <span>Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center text-red-500 font-medium space-x-2 hover:bg-gray-200 p-2 rounded">
+          <span class="material-icons"><i class="fa-solid fa-hand"></i></span> <span>Donors</span>
+        </a>
+        <a href="#" class="flex items-center text-red-500 font-medium space-x-2 hover:bg-gray-200 p-2 rounded">
+          <span class="material-icons"><i class="fa-solid fa-droplet"></i></span> <span>Blood Type</span>
+        </a>
+        <a href="#" class="flex items-center text-red-500 font-medium space-x-2 hover:bg-gray-200 p-2 rounded">
+          <span class="material-icons"><i class="fa-solid fa-users"></i></span> <span>Users</span>
+        </a>
+      </nav>
+      <hr class="border-t border-red-500 my-4 mt-40">
+      <div class="flex items-center text-red-500 font-medium space-x-2 m-15"><i class="fa-solid fa-droplet"></i></div>
+    </div>
+
+    <!-- Mobile Sidebar Toggle Button -->
+    <div class="md:hidden bg-white shadow-lg p-4">
+      <button id="menu-toggle" class="text-red-500 font-medium">
+        <i class="fa-solid fa-bars"></i> Menu
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="w-full md:w-4/5 p-8">
+      <!-- Top Info Cards -->
+      <div class="bg-white shadow-lg text-red-500 mb-4 p-6 flex justify-between items-center">
+        <span class="text-2xl">So<span class="text-red-300">m</span> Blood Bank</span>
+        <div class="space-x-4">
+          <i class="fa-solid fa-bell"></i>
+          <i class="fa-solid fa-clock"></i>
+        </div>
+      </div>
+
+      <!-- Responsive Grid for Info Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="bg-red-500 text-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-lg font-semibold">Total Donors</h2>
+          <p class="text-2xl mt-2">3 <i class="fa-solid fa-hand"></i></p>
+        </div>
+        <div class="bg-red-500 text-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-lg font-semibold">All Users</h2>
+          <p class="text-2xl mt-2">5 <i class="fa-solid fa-users"></i></p>
+        </div>
+        <div class="bg-red-500 text-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-lg font-semibold">All Messages</h2>
+          <p class="text-2xl mt-2">3 <i class="fa-solid fa-envelope"></i></p>
+        </div>
+      </div>
+
+      <!-- Latest Messages Table -->
+      <div class="bg-gray-200 p-6 rounded-lg shadow-lg mt-8">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Latest Messages</h2>
+        <table class="w-full table-auto">
+          <thead>
+            <tr class="text-left bg-gray-300">
+              <th class="py-2 px-4">UserName</th>
+              <th class="py-2 px-4">Blood Type</th>
+              <th class="py-2 px-4">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="py-2 px-4">Xaawo</td>
+              <td class="py-2 px-4">A-</td>
+              <td class="py-2 px-4">Wed Nov 13 2024</td>
+            </tr>
+            <tr class="border-t">
+              <td class="py-2 px-4">Nasri</td>
+              <td class="py-2 px-4">AB-</td>
+              <td class="py-2 px-4">Wed Nov 13 2024</td>
+            </tr>
+            <tr class="border-t">
+              <td class="py-2 px-4">A.samed Nasri</td>
+              <td class="py-2 px-4">A+</td>
+              <td class="py-2 px-4">Wed Nov 13 2024</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Toggle Menu -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.w-1/6');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
